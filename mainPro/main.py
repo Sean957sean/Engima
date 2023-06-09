@@ -63,19 +63,19 @@ def videoDetector(cam,cascade,age_net,gender_net,MODEL_MEAN_VALUES,age_list,gend
 
 
 # 얼굴 탐지 모델 가중치
-cascade_filename = 'data/haarcascade_frontalface_alt.xml'
+cascade_filename = 'haarcascade_frontalface_alt.xml'
 # 모델 불러오기
 cascade = cv2.CascadeClassifier(cascade_filename)
 
 MODEL_MEAN_VALUES = (78.4263377603, 87.7689143744, 114.895847746)
 
 age_net = cv2.dnn.readNetFromCaffe(
-	'data/deploy_age.prototxt',
-	'data/age_net.caffemodel')
+	'deploy_age.prototxt',
+	'age_net.caffemodel')
 
 gender_net = cv2.dnn.readNetFromCaffe(
-	'data/deploy_gender.prototxt',
-	'data/gender_net.caffemodel')
+	'deploy_gender.prototxt',
+	'gender_net.caffemodel')
 
 age_list = ['(0 ~ 2)','(4 ~ 6)','(8 ~ 12)','(15 ~ 20)',
             '(25 ~ 32)','(38 ~ 43)','(48 ~ 53)','(60 ~ 100)']
